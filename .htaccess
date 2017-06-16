@@ -1,0 +1,3 @@
+Options +FollowSymLinks
+RewriteEngine on
+ErrorDocument 404 http://localhost/twitouch/404.php
