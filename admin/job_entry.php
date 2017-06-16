@@ -1,6 +1,6 @@
 <?php
 session_start();
-require_once ('db.php"');
+require_once('db.php"');
 if ($_SESSION['name']) {
     $user = $_SESSION['name'];
     ?>
@@ -53,6 +53,7 @@ if ($_SESSION['name']) {
                     </div>
                 </div>
             </header>
+
             <form method="POST">
                 <?php include "injection/job_entry.php"; ?>
                 <section class="card card-blue-fill">
@@ -72,34 +73,49 @@ if ($_SESSION['name']) {
                                             foreach ($select as $s) {
                                                 ?>
 
-                                                <option><?php echo $s['catagory']; ?></option>
-                                                <?php
-                                            }
-                                        }
-                                        ?>
+                                                <option><?php echo $s['catagory'];  ?></option>
+                                            <?php }
+                                        } ?>
                                     </select>
                                 </fieldset>
                             </div>
                         </div>
-                        <div class="row">
-                            <div class="col-lg-12">
-                                <section class="box-typical box-typical-padding">
-                                    <h3 class="with-border">Question</h3>
-                                    <div class="summernote-theme-1">
-                                        <textarea class="summernote" name="question"></textarea>
-                                    </div>
-                                </section>
+
+                        <?php   if ( 0 ) {  ?>
+                            <div class="row">
+                                <div class="col-lg-12">
+                                    <section class="box-typical box-typical-padding">
+                                        <h3 class="with-border">Question</h3>
+                                        <div class="summernote-theme-1">
+                                            <textarea class="summernote" name="question"></textarea>
+                                        </div>
+                                    </section>
+                                </div>
                             </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-lg-8">
-                                <fieldset class="form-group">
-                                    <label class="form-label semibold" for="exampleInput">Answer</label>
-                                    <textarea type="text" name="answer" class="form-control" id="exampleInput"
-                                              rows="3"></textarea>
-                                </fieldset>
+                            <div class="row">
+                                <div class="col-lg-8">
+                                    <fieldset class="form-group">
+                                        <label class="form-label semibold" for="exampleInput">Answer</label>
+                                        <textarea type="text" name="answer" class="form-control" id="exampleInput"
+                                                  rows="3"></textarea>
+                                    </fieldset>
+                                </div>
                             </div>
-                        </div>
+
+
+                        <?php } else { ?>
+                            <div class="row">
+                                <div class="col-lg-8">
+                                    <fieldset class="form-group">
+                                        <label class="form-label semibold" for="exampleInput">Link</label>
+                                        <textarea type="text" name="answer" class="form-control" id="exampleInput"
+                                                  rows="3"></textarea>
+                                    </fieldset>
+                                </div>
+                            </div>
+
+                        <?php } ?>
+
                         <div class="row">
                             <input type="submit" name="submit" class="btn btn-rounded btn-inline" value="Submit"
                                    style="margin-left:10px"/>
